@@ -1,50 +1,54 @@
-/* =====================================================
+/* ==========================================================
    KMJ Portfolio v1
-   Style.css - Part 1
-   Base / Variables / Header / Navigation / Buttons
-===================================================== */
+   Author : KMJ
+   Version : 1.0
+   ========================================================== */
 
-/* =========================
-   Google Font
-========================= */
+/* ==========================================================
+   GOOGLE FONT
+   ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap');
 
 
-/* =========================
-   CSS Variables
-========================= */
+/* ==========================================================
+   CSS VARIABLES
+   ========================================================== */
 
 :root{
 
-    --bg:#0B1120;
+    --bg:#050816;
 
-    --bg-secondary:#111827;
+    --section:#0B1120;
 
-    --card:#1F2937;
+    --card:#111827;
+
+    --card-hover:#17233A;
 
     --primary:#3B82F6;
 
-    --primary-hover:#2563EB;
+    --primary-light:#60A5FA;
 
-    --text:#F9FAFB;
+    --white:#FFFFFF;
 
-    --sub:#9CA3AF;
+    --text:#CBD5E1;
+
+    --sub:#94A3B8;
 
     --border:rgba(255,255,255,.08);
 
-    --shadow:0 10px 35px rgba(0,0,0,.35);
+    --shadow:0 15px 45px rgba(0,0,0,.35);
 
-    --radius:18px;
+    --radius:22px;
 
     --transition:.35s ease;
 
 }
 
 
-/* =========================
-   Reset
-========================= */
+/* ==========================================================
+   RESET
+   ========================================================== */
 
 *{
 
@@ -56,19 +60,21 @@
 
 }
 
+
 html{
 
     scroll-behavior:smooth;
 
 }
 
+
 body{
+
+    font-family:"Pretendard",sans-serif;
 
     background:var(--bg);
 
-    color:var(--text);
-
-    font-family:"Pretendard",sans-serif;
+    color:var(--white);
 
     line-height:1.7;
 
@@ -77,9 +83,9 @@ body{
 }
 
 
-/* =========================
-   Selection
-========================= */
+/* ==========================================================
+   SELECTION
+   ========================================================== */
 
 ::selection{
 
@@ -90,9 +96,9 @@ body{
 }
 
 
-/* =========================
-   Scrollbar
-========================= */
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
 
 ::-webkit-scrollbar{
 
@@ -102,7 +108,7 @@ body{
 
 ::-webkit-scrollbar-track{
 
-    background:#0B1120;
+    background:#08101d;
 
 }
 
@@ -121,22 +127,22 @@ body{
 }
 
 
-/* =========================
-   Links
-========================= */
+/* ==========================================================
+   LINKS
+   ========================================================== */
 
 a{
 
-    color:inherit;
-
     text-decoration:none;
+
+    color:inherit;
 
 }
 
 
-/* =========================
-   Images
-========================= */
+/* ==========================================================
+   IMAGE
+   ========================================================== */
 
 img{
 
@@ -147,56 +153,89 @@ img{
 }
 
 
-/* =========================
-   Section
-========================= */
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
 
-section{
+.container{
 
-    width:min(1100px,90%);
+    width:min(1180px,92%);
 
     margin:auto;
 
-    padding:110px 0;
+}
+
+
+/* ==========================================================
+   SECTION
+   ========================================================== */
+
+.section{
+
+    padding:120px 0;
+
+    position:relative;
 
 }
 
 
-/* =========================
-   Title
-========================= */
+/* ==========================================================
+   SECTION TITLE
+   ========================================================== */
 
-section h2{
-
-    font-size:2.3rem;
-
-    margin-bottom:20px;
+.section-header{
 
     text-align:center;
 
-    font-weight:700;
+    margin-bottom:70px;
 
 }
 
 
-section>p{
+.section-subtitle{
+
+    display:inline-block;
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    margin-bottom:12px;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+}
+
+
+.section-title{
+
+    font-size:clamp(2rem,5vw,3rem);
+
+    font-weight:800;
+
+    margin-bottom:18px;
+
+}
+
+
+.section-description{
 
     max-width:700px;
 
     margin:auto;
-
-    text-align:center;
 
     color:var(--sub);
 
 }
 
 
-/* =====================================================
+/* ==========================================================
    HEADER
-===================================================== */
+   ========================================================== */
 
-header{
+#header{
 
     position:fixed;
 
@@ -210,58 +249,64 @@ header{
 
     backdrop-filter:blur(18px);
 
-    background:rgba(11,17,32,.75);
+    background:rgba(5,8,22,.65);
 
     border-bottom:1px solid rgba(255,255,255,.05);
 
 }
 
 
-/* =========================
-   Navbar
-========================= */
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
 
 .navbar{
 
-    width:min(1200px,92%);
-
-    height:75px;
-
-    margin:auto;
+    height:82px;
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:center;
+
+    justify-content:space-between;
 
 }
 
 
-/* =========================
-   Logo
-========================= */
+/* ==========================================================
+   LOGO
+   ========================================================== */
 
 .logo{
 
-    font-size:1.7rem;
+    font-size:1.8rem;
 
     font-weight:800;
 
-    color:var(--primary);
+    color:var(--white);
 
     letter-spacing:1px;
+
+    transition:var(--transition);
+
+}
+
+.logo:hover{
+
+    color:var(--primary);
 
 }
 
 
-/* =========================
-   Navigation
-========================= */
+/* ==========================================================
+   NAV LINKS
+   ========================================================== */
 
 .nav-links{
 
     display:flex;
+
+    align-items:center;
 
     gap:34px;
 
@@ -272,13 +317,13 @@ header{
 
 .nav-links a{
 
-    color:var(--sub);
+    position:relative;
+
+    color:var(--text);
 
     font-weight:500;
 
     transition:var(--transition);
-
-    position:relative;
 
 }
 
@@ -298,11 +343,13 @@ header{
 
     left:0;
 
-    bottom:-7px;
+    bottom:-8px;
 
     width:0;
 
     height:2px;
+
+    border-radius:100px;
 
     background:var(--primary);
 
@@ -318,9 +365,9 @@ header{
 }
 
 
-/* =====================================================
+/* ==========================================================
    BUTTON
-===================================================== */
+   ========================================================== */
 
 .btn{
 
@@ -330,7 +377,9 @@ header{
 
     justify-content:center;
 
-    padding:14px 28px;
+    gap:10px;
+
+    padding:15px 28px;
 
     border-radius:100px;
 
@@ -343,39 +392,31 @@ header{
 }
 
 
-/* =========================
-   Primary
-========================= */
-
 .btn.primary{
 
     background:var(--primary);
 
     color:white;
 
+    box-shadow:0 10px 30px rgba(59,130,246,.25);
+
 }
 
 
 .btn.primary:hover{
 
-    background:var(--primary-hover);
+    background:var(--primary-light);
 
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(59,130,246,.35);
+    transform:translateY(-4px);
 
 }
 
-
-/* =========================
-   Secondary
-========================= */
 
 .btn.secondary{
 
     border:1px solid rgba(255,255,255,.1);
 
-    background:rgba(255,255,255,.04);
+    background:rgba(255,255,255,.03);
 
 }
 
@@ -384,43 +425,32 @@ header{
 
     background:rgba(255,255,255,.08);
 
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 
 }
 
 
-/* =====================================================
-   Utilities
-===================================================== */
+/* ==========================================================
+   GLASS CARD
+   ========================================================== */
 
-.hidden{
+.glass{
 
-    opacity:0;
+    background:rgba(255,255,255,.03);
 
-    transform:translateY(30px);
+    border:1px solid var(--border);
 
-}
+    border-radius:var(--radius);
 
-.show{
+    backdrop-filter:blur(16px);
 
-    opacity:1;
-
-    transform:translateY(0);
-
-    transition:1s;
+    box-shadow:var(--shadow);
 
 }
 
-
-/* =====================================================
-   KMJ Portfolio v1
-   Style.css - Part 2
-   Hero Section
-===================================================== */
-
-/* =========================
+/* ==========================================================
    HERO
-========================= */
+========================================================== */
 
 .hero{
 
@@ -428,24 +458,50 @@ header{
 
     display:flex;
 
-    flex-direction:column;
-
     justify-content:center;
 
     align-items:center;
-
-    text-align:center;
 
     position:relative;
 
     overflow:hidden;
 
+    padding:140px 0 80px;
+
+    background:
+        radial-gradient(circle at top,
+        rgba(59,130,246,.12),
+        transparent 45%);
+
 }
 
 
-/* =========================
-   Background Glow
-========================= */
+/* ==========================================================
+   HERO CONTAINER
+========================================================== */
+
+.hero-container{
+
+    width:min(900px,92%);
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+
+/* ==========================================================
+   BACKGROUND GLOW
+========================================================== */
 
 .hero::before{
 
@@ -453,21 +509,29 @@ header{
 
     position:absolute;
 
-    width:600px;
+    width:650px;
 
-    height:600px;
+    height:650px;
 
-    background:radial-gradient(circle,
-    rgba(59,130,246,.25) 0%,
-    rgba(59,130,246,0) 70%);
+    border-radius:50%;
 
-    top:-220px;
+    background:
+
+        radial-gradient(circle,
+
+        rgba(59,130,246,.18),
+
+        transparent 70%);
+
+    top:-260px;
 
     left:50%;
 
     transform:translateX(-50%);
 
-    z-index:-2;
+    filter:blur(25px);
+
+    z-index:1;
 
 }
 
@@ -477,32 +541,38 @@ header{
 
     position:absolute;
 
-    width:350px;
+    width:320px;
 
-    height:350px;
+    height:320px;
 
-    background:radial-gradient(circle,
-    rgba(99,102,241,.18) 0%,
-    transparent 70%);
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(circle,
+
+        rgba(96,165,250,.12),
+
+        transparent 70%);
+
+    right:-120px;
 
     bottom:-120px;
 
-    right:-80px;
-
-    z-index:-2;
+    filter:blur(30px);
 
 }
 
 
-/* =========================
-   Profile Image
-========================= */
+/* ==========================================================
+   PROFILE IMAGE
+========================================================== */
 
 .profile{
 
-    width:180px;
+    width:190px;
 
-    height:180px;
+    height:190px;
 
     border-radius:50%;
 
@@ -510,11 +580,15 @@ header{
 
     border:5px solid rgba(255,255,255,.08);
 
-    box-shadow:0 20px 45px rgba(0,0,0,.45);
+    box-shadow:
 
-    margin-bottom:35px;
+        0 25px 60px rgba(0,0,0,.45),
 
-    transition:.5s;
+        0 0 50px rgba(59,130,246,.15);
+
+    margin-bottom:40px;
+
+    transition:var(--transition);
 
 }
 
@@ -522,69 +596,122 @@ header{
 
     transform:translateY(-8px) scale(1.03);
 
-    box-shadow:0 30px 60px rgba(59,130,246,.28);
+    box-shadow:
+
+        0 35px 80px rgba(0,0,0,.5),
+
+        0 0 70px rgba(59,130,246,.28);
 
 }
 
 
-/* =========================
-   Hero Title
-========================= */
+/* ==========================================================
+   HERO TEXT
+========================================================== */
 
-.hero h1{
-
-    font-size:clamp(3rem,8vw,5.5rem);
-
-    font-weight:800;
-
-    letter-spacing:-2px;
-
-    margin-bottom:10px;
-
-    line-height:1.1;
-
-}
-
-
-/* =========================
-   Hero Subtitle
-========================= */
-
-.hero h2{
-
-    font-size:1.4rem;
-
-    font-weight:500;
+.hero-greeting{
 
     color:var(--primary);
 
-    margin-bottom:24px;
+    font-size:1rem;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(3.5rem,8vw,6rem);
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    margin-bottom:12px;
+
+}
+
+.hero h2{
+
+    font-size:1.5rem;
+
+    color:var(--text);
+
+    font-weight:500;
+
+    margin-bottom:28px;
+
+}
+
+.hero-description{
+
+    max-width:700px;
+
+    color:var(--sub);
+
+    font-size:1.08rem;
+
+    line-height:2;
+
+    margin-bottom:40px;
 
 }
 
 
-/* =========================
-   Hero Description
-========================= */
+/* ==========================================================
+   HERO TAGS
+========================================================== */
 
-.hero p{
+.hero-tags{
 
-    max-width:650px;
+    display:flex;
 
-    color:var(--sub);
+    flex-wrap:wrap;
 
-    font-size:1.15rem;
+    justify-content:center;
 
-    line-height:1.9;
+    gap:12px;
 
     margin-bottom:45px;
 
 }
 
+.hero-tags span{
 
-/* =========================
-   Buttons
-========================= */
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--text);
+
+    font-size:.92rem;
+
+    transition:var(--transition);
+
+}
+
+.hero-tags span:hover{
+
+    background:rgba(59,130,246,.18);
+
+    border-color:rgba(59,130,246,.45);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   HERO BUTTONS
+========================================================== */
 
 .hero-buttons{
 
@@ -599,15 +726,15 @@ header{
 }
 
 
-/* =========================
-   Scroll Down
-========================= */
+/* ==========================================================
+   SCROLL INDICATOR
+========================================================== */
 
-.scroll-down{
+.scroll-indicator{
 
     position:absolute;
 
-    bottom:40px;
+    bottom:35px;
 
     left:50%;
 
@@ -625,22 +752,22 @@ header{
 
     font-size:.9rem;
 
-    animation:float 2s infinite;
+    animation:bounce 2s infinite;
 
 }
 
-.scroll-down span{
+.scroll-indicator i{
 
-    font-size:1.4rem;
+    font-size:1rem;
 
 }
 
 
-/* =========================
-   Floating Animation
-========================= */
+/* ==========================================================
+   BOUNCE
+========================================================== */
 
-@keyframes float{
+@keyframes bounce{
 
     0%{
 
@@ -663,58 +790,57 @@ header{
 }
 
 
-/* =========================
-   Fade In Animation
-========================= */
+/* ==========================================================
+   HERO FADE
+========================================================== */
 
-.hero .profile{
-
-    animation:fadeUp .8s ease forwards;
-
-}
-
-.hero h1{
+.hero-container>*{
 
     opacity:0;
 
-    animation:fadeUp .8s ease .2s forwards;
+    transform:translateY(30px);
+
+    animation:heroFade .8s forwards;
 
 }
 
-.hero h2{
+.hero-container>*:nth-child(1){
 
-    opacity:0;
-
-    animation:fadeUp .8s ease .4s forwards;
+    animation-delay:.1s;
 
 }
 
-.hero p{
+.hero-container>*:nth-child(2){
 
-    opacity:0;
-
-    animation:fadeUp .8s ease .6s forwards;
+    animation-delay:.2s;
 
 }
 
-.hero-buttons{
+.hero-container>*:nth-child(3){
 
-    opacity:0;
-
-    animation:fadeUp .8s ease .8s forwards;
+    animation-delay:.35s;
 
 }
 
+.hero-container>*:nth-child(4){
 
-@keyframes fadeUp{
+    animation-delay:.5s;
 
-    from{
+}
 
-        opacity:0;
+.hero-container>*:nth-child(5){
 
-        transform:translateY(40px);
+    animation-delay:.65s;
 
-    }
+}
+
+.hero-container>*:nth-child(6){
+
+    animation-delay:.8s;
+
+}
+
+@keyframes heroFade{
 
     to{
 
@@ -726,52 +852,38 @@ header{
 
 }
 
-
-/* =========================
-   Hero Divider
-========================= */
-
-.hero::marker{
-
-    display:none;
-
-}
-
-
-
-/* =====================================================
-   KMJ Portfolio v1
-   Style.css - Part 3
-   About & Tech Stack
-===================================================== */
-
-/* =========================
+/* ==========================================================
    ABOUT
-========================= */
+========================================================== */
 
 #about{
 
-    position:relative;
+    background:var(--section);
 
 }
 
-#about p{
 
-    margin-top:30px;
+/* ==========================================================
+   ABOUT CARD
+========================================================== */
+
+.about-card{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+    padding:45px;
+
+    border-radius:var(--radius);
 
     background:rgba(255,255,255,.03);
 
     border:1px solid var(--border);
 
-    border-radius:var(--radius);
-
-    padding:45px;
-
-    color:var(--sub);
-
-    font-size:1.08rem;
-
-    line-height:2;
+    backdrop-filter:blur(20px);
 
     box-shadow:var(--shadow);
 
@@ -779,7 +891,8 @@ header{
 
 }
 
-#about p:hover{
+
+.about-card:hover{
 
     transform:translateY(-6px);
 
@@ -787,72 +900,222 @@ header{
 
 }
 
-#about strong{
 
-    color:white;
+/* ==========================================================
+   ABOUT CONTENT
+========================================================== */
 
-}
-
-
-/* =========================
-   TECH STACK
-========================= */
-
-.stack-grid{
-
-    margin-top:55px;
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-
-    gap:22px;
-
-}
-
-
-/* =========================
-   STACK CARD
-========================= */
-
-.stack-card{
-
-    background:rgba(255,255,255,.03);
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    padding:30px 20px;
+.about-content{
 
     display:flex;
 
-    align-items:center;
-
-    justify-content:center;
-
     flex-direction:column;
 
-    gap:14px;
+    gap:24px;
 
-    text-align:center;
+}
+
+
+.about-content p{
+
+    color:var(--text);
+
+    font-size:1.05rem;
+
+    line-height:2;
+
+}
+
+
+.about-content strong{
+
+    color:var(--primary);
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================================
+   INFO GRID
+========================================================== */
+
+.about-info{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+
+/* ==========================================================
+   INFO CARD
+========================================================== */
+
+.info-item{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    transition:var(--transition);
+
+}
+
+
+.info-item:hover{
+
+    transform:translateX(6px);
+
+    background:rgba(59,130,246,.08);
+
+    border-color:rgba(59,130,246,.3);
+
+}
+
+
+/* ==========================================================
+   INFO TITLE
+========================================================== */
+
+.info-title{
+
+    display:block;
+
+    color:var(--sub);
+
+    font-size:.9rem;
+
+    margin-bottom:8px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ==========================================================
+   INFO VALUE
+========================================================== */
+
+.info-value{
+
+    display:block;
+
+    color:var(--white);
 
     font-size:1.05rem;
 
     font-weight:600;
 
-    transition:.35s;
+}
+
+
+/* ==========================================================
+   ABOUT ANIMATION
+========================================================== */
+
+.about-card{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:aboutFade .8s forwards;
+
+    animation-timeline:view();
+
+    animation-range:entry 10% cover 30%;
+
+}
+
+
+@keyframes aboutFade{
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   TECH STACK
+========================================================== */
+
+#stack{
+
+    background:var(--bg);
+
+}
+
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.stack-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,minmax(0,1fr));
+
+    gap:24px;
+
+}
+
+
+/* ==========================================================
+   STACK CARD
+========================================================== */
+
+.stack-card{
 
     position:relative;
 
     overflow:hidden;
 
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:38px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    gap:18px;
+
     cursor:default;
+
+    transition:all .35s ease;
+
+    backdrop-filter:blur(16px);
 
 }
 
 
-/* Shine Effect */
+/* ==========================================================
+   SHINE EFFECT
+========================================================== */
 
 .stack-card::before{
 
@@ -860,151 +1123,166 @@ header{
 
     position:absolute;
 
-    top:-120%;
+    top:-150%;
 
-    left:-50%;
+    left:-70%;
 
-    width:70%;
+    width:60%;
 
-    height:250%;
+    height:320%;
 
-    background:linear-gradient(
+    background:
 
-        120deg,
+        linear-gradient(
 
-        transparent,
+            120deg,
 
-        rgba(255,255,255,.08),
+            transparent,
 
-        transparent
+            rgba(255,255,255,.12),
 
-    );
+            transparent
+
+        );
 
     transform:rotate(25deg);
 
-    transition:.7s;
+    transition:.8s;
 
 }
 
 .stack-card:hover::before{
 
-    left:130%;
+    left:150%;
 
 }
 
 
-/* Hover */
+/* ==========================================================
+   HOVER
+========================================================== */
 
 .stack-card:hover{
 
     transform:translateY(-10px);
 
-    background:#162033;
+    background:var(--card-hover);
 
     border-color:rgba(59,130,246,.35);
 
     box-shadow:
 
-    0 20px 40px rgba(0,0,0,.35),
+        0 25px 50px rgba(0,0,0,.35),
 
-    0 0 30px rgba(59,130,246,.12);
-
-}
-
-
-/* =========================
-   STACK TITLE
-========================= */
-
-.stack-card span{
-
-    font-size:.9rem;
-
-    color:var(--sub);
+        0 0 35px rgba(59,130,246,.15);
 
 }
 
 
-/* =========================
-   Optional Icon
-========================= */
+/* ==========================================================
+   ICON
+========================================================== */
 
 .stack-card i{
 
-    font-size:2.4rem;
+    font-size:4rem;
 
-    color:var(--primary);
+    transition:.35s;
+
+}
+
+.stack-card:hover i{
+
+    transform:scale(1.12);
 
 }
 
 
-/* =========================
-   Grid Animation
-========================= */
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.stack-card h3{
+
+    font-size:1.2rem;
+
+    font-weight:700;
+
+    color:var(--white);
+
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.stack-card p{
+
+    color:var(--sub);
+
+    font-size:.95rem;
+
+}
+
+
+/* ==========================================================
+   BORDER GLOW
+========================================================== */
+
+.stack-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    border:1px solid transparent;
+
+    transition:.35s;
+
+}
+
+.stack-card:hover::after{
+
+    border-color:rgba(96,165,250,.25);
+
+}
+
+
+/* ==========================================================
+   STACK ANIMATION
+========================================================== */
 
 .stack-card{
 
     opacity:0;
 
-    transform:translateY(40px);
+    transform:translateY(35px);
 
     animation:stackFade .8s forwards;
 
-}
+    animation-timeline:view();
 
-.stack-card:nth-child(1){
-
-    animation-delay:.1s;
+    animation-range:entry 5% cover 35%;
 
 }
 
-.stack-card:nth-child(2){
-
-    animation-delay:.2s;
-
-}
-
-.stack-card:nth-child(3){
-
-    animation-delay:.3s;
-
-}
-
-.stack-card:nth-child(4){
-
-    animation-delay:.4s;
-
-}
-
-.stack-card:nth-child(5){
-
-    animation-delay:.5s;
-
-}
-
-.stack-card:nth-child(6){
-
-    animation-delay:.6s;
-
-}
-
-.stack-card:nth-child(7){
-
-    animation-delay:.7s;
-
-}
-
-.stack-card:nth-child(8){
-
-    animation-delay:.8s;
-
-}
-
-.stack-card:nth-child(9){
-
-    animation-delay:.9s;
-
-}
+.stack-card:nth-child(1){animation-delay:.05s;}
+.stack-card:nth-child(2){animation-delay:.10s;}
+.stack-card:nth-child(3){animation-delay:.15s;}
+.stack-card:nth-child(4){animation-delay:.20s;}
+.stack-card:nth-child(5){animation-delay:.25s;}
+.stack-card:nth-child(6){animation-delay:.30s;}
+.stack-card:nth-child(7){animation-delay:.35s;}
+.stack-card:nth-child(8){animation-delay:.40s;}
+.stack-card:nth-child(9){animation-delay:.45s;}
+.stack-card:nth-child(10){animation-delay:.50s;}
+.stack-card:nth-child(11){animation-delay:.55s;}
+.stack-card:nth-child(12){animation-delay:.60s;}
 
 @keyframes stackFade{
 
@@ -1018,48 +1296,1241 @@ header{
 
 }
 
+/* ==========================================================
+   PROJECTS
+========================================================== */
 
-/* =========================
-   Section Spacing
-========================= */
+#projects{
 
-#stack{
+    background:var(--section);
+
+}
+
+
+/* ==========================================================
+   PROJECT GRID
+========================================================== */
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:32px;
+
+}
+
+
+/* ==========================================================
+   PROJECT CARD
+========================================================== */
+
+.project-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:35px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(16px);
+
+    transition:all .35s ease;
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(59,130,246,.35);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.35),
+
+        0 0 40px rgba(59,130,246,.15);
+
+}
+
+
+/* ==========================================================
+   PROJECT SHINE
+========================================================== */
+
+.project-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-80%;
+
+    width:70%;
+
+    height:320%;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.08),
+
+            transparent
+
+        );
+
+    transform:rotate(25deg);
+
+    transition:.9s;
+
+}
+
+.project-card:hover::before{
+
+    left:160%;
+
+}
+
+
+/* ==========================================================
+   PROJECT HEADER
+========================================================== */
+
+.project-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+
+/* ==========================================================
+   PROJECT ICON
+========================================================== */
+
+.project-icon{
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:2rem;
+
+    background:rgba(59,130,246,.12);
+
+    color:var(--primary);
+
+    transition:.3s;
+
+}
+
+.project-card:hover .project-icon{
+
+    transform:scale(1.08) rotate(-4deg);
+
+}
+
+
+/* ==========================================================
+   PROJECT STATUS
+========================================================== */
+
+.project-status{
+
+    padding:8px 16px;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.15);
+
+    color:var(--primary-light);
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+}
+
+
+/* ==========================================================
+   PROJECT TITLE
+========================================================== */
+
+.project-title{
+
+    font-size:1.7rem;
+
+    font-weight:700;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   PROJECT DESCRIPTION
+========================================================== */
+
+.project-description{
+
+    color:var(--sub);
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+    flex:1;
+
+}
+
+
+/* ==========================================================
+   PROJECT TAGS
+========================================================== */
+
+.project-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:28px;
+
+}
+
+.project-tags span{
+
+    padding:8px 14px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--text);
+
+    font-size:.85rem;
+
+    transition:.3s;
+
+}
+
+.project-card:hover .project-tags span{
+
+    border-color:rgba(59,130,246,.25);
+
+}
+
+
+/* ==========================================================
+   PROJECT BUTTON
+========================================================== */
+
+.project-links{
+
+    margin-top:auto;
+
+}
+
+.project-button{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:100%;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.project-button:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   PROJECT BORDER GLOW
+========================================================== */
+
+.project-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    border:1px solid transparent;
+
+    transition:.3s;
+
+}
+
+.project-card:hover::after{
+
+    border-color:rgba(96,165,250,.2);
+
+}
+
+/* ==========================================================
+   ACTIVITY
+========================================================== */
+
+#activity{
+
+    background:var(--bg);
+
+}
+
+
+/* ==========================================================
+   ACTIVITY GRID
+========================================================== */
+
+.activity-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+
+/* ==========================================================
+   ACTIVITY CARD
+========================================================== */
+
+.activity-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(16px);
+
+    transition:all .35s ease;
+
+}
+
+.activity-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(59,130,246,.35);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.35),
+
+        0 0 35px rgba(59,130,246,.15);
+
+}
+
+
+/* ==========================================================
+   SHINE EFFECT
+========================================================== */
+
+.activity-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150%;
+
+    left:-70%;
+
+    width:60%;
+
+    height:320%;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.08),
+
+            transparent
+
+        );
+
+    transform:rotate(25deg);
+
+    transition:.9s;
+
+}
+
+.activity-card:hover::before{
+
+    left:170%;
+
+}
+
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.activity-icon{
+
+    width:90px;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    margin-bottom:25px;
+
+    background:rgba(59,130,246,.12);
+
+    color:var(--primary);
+
+    font-size:2.5rem;
+
+    transition:.35s;
+
+}
+
+.activity-card:hover .activity-icon{
+
+    transform:scale(1.08) rotate(-6deg);
+
+}
+
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.activity-card h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:18px;
+
+}
+
+
+/* ==========================================================
+   DESCRIPTION
+========================================================== */
+
+.activity-card p{
+
+    color:var(--sub);
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+    flex:1;
+
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.activity-button{
+
+    display:inline-flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(59,130,246,.12);
+
+    color:var(--primary-light);
+
+    border:1px solid rgba(59,130,246,.2);
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.activity-button:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    border-color:var(--primary);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   BORDER EFFECT
+========================================================== */
+
+.activity-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    border:1px solid transparent;
+
+    transition:.35s;
+
+}
+
+.activity-card:hover::after{
+
+    border-color:rgba(96,165,250,.22);
+
+}
+
+/* ==========================================================
+   CONTACT
+========================================================== */
+
+#contact{
+
+    background:var(--section);
+
+}
+
+
+/* ==========================================================
+   CONTACT CARD
+========================================================== */
+
+.contact-card{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+    max-width:950px;
+
+    margin:0 auto;
+
+}
+
+
+/* ==========================================================
+   CONTACT ITEM
+========================================================== */
+
+.contact-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:28px 32px;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    backdrop-filter:blur(16px);
+
+    transition:all .35s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/* ==========================================================
+   SHINE
+========================================================== */
+
+.contact-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-180%;
+
+    left:-70%;
+
+    width:55%;
+
+    height:360%;
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            transparent,
+
+            rgba(255,255,255,.08),
+
+            transparent
+
+        );
+
+    transform:rotate(25deg);
+
+    transition:.9s;
+
+}
+
+.contact-item:hover::before{
+
+    left:170%;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.contact-item:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(59,130,246,.35);
+
+    box-shadow:
+
+        0 18px 45px rgba(0,0,0,.35),
+
+        0 0 35px rgba(59,130,246,.15);
+
+}
+
+
+/* ==========================================================
+   ICON
+========================================================== */
+
+.contact-item i{
+
+    width:68px;
+
+    height:68px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    font-size:1.8rem;
+
+    background:rgba(59,130,246,.12);
+
+    color:var(--primary);
+
+    flex-shrink:0;
+
+    transition:.35s;
+
+}
+
+.contact-item:hover i{
+
+    transform:scale(1.08);
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.contact-item div{
+
+    flex:1;
+
+}
+
+.contact-item h3{
+
+    font-size:1.2rem;
+
+    margin-bottom:8px;
+
+    color:var(--white);
+
+}
+
+.contact-item p{
+
+    color:var(--sub);
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.contact-link{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-width:130px;
+
+    padding:14px 22px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-weight:600;
+
+    transition:all .3s ease;
+
+}
+
+.contact-link:hover{
+
+    background:var(--primary-light);
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   BORDER EFFECT
+========================================================== */
+
+.contact-item::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:24px;
+
+    border:1px solid transparent;
+
+    transition:.35s;
+
+}
+
+.contact-item:hover::after{
+
+    border-color:rgba(96,165,250,.22);
+
+}
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+#footer{
+
+    background:#040611;
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    padding:70px 0 40px;
+
+}
+
+
+.footer-logo{
+
+    text-align:center;
+
+    font-size:2.5rem;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+
+}
+
+
+.footer-description{
+
+    text-align:center;
+
+    color:var(--sub);
+
+    margin-bottom:35px;
+
+}
+
+
+/* ==========================================================
+   FOOTER LINKS
+========================================================== */
+
+.footer-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    margin-bottom:40px;
+
+}
+
+
+.footer-links a{
+
+    color:var(--text);
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+
+.footer-links a:hover{
+
+    color:var(--primary);
+
+}
+
+
+/* ==========================================================
+   SOCIAL
+========================================================== */
+
+.footer-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:35px;
+
+}
+
+.footer-social a{
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.04);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.35s;
+
+}
+
+.footer-social a i{
+
+    font-size:1.2rem;
+
+}
+
+.footer-social a:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 30px rgba(59,130,246,.35);
+
+}
+
+
+/* ==========================================================
+   COPYRIGHT
+========================================================== */
+
+.footer-copy{
+
+    text-align:center;
+
+    color:var(--sub);
+
+    font-size:.92rem;
+
+    margin-bottom:10px;
+
+}
+
+.footer-made{
+
+    text-align:center;
+
+    color:#64748B;
+
+    font-size:.9rem;
+
+}
+
+
+/* ==========================================================
+   BACK TO TOP
+========================================================== */
+
+.back-to-top{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:52px;
+
+    height:52px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(59,130,246,.35);
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    z-index:999;
+
+}
+
+.back-to-top:hover{
+
+    transform:translateY(-6px);
+
+    background:var(--primary-light);
+
+}
+
+
+/* ==========================================================
+   UTILITIES
+========================================================== */
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.mt-1{
+
+    margin-top:10px;
+
+}
+
+.mt-2{
 
     margin-top:20px;
 
 }
 
+.mt-3{
 
-/* =========================
-   Divider
-========================= */
+    margin-top:30px;
 
-#stack::after{
+}
 
-    content:"";
+.mb-1{
 
-    display:block;
+    margin-bottom:10px;
 
-    width:120px;
+}
 
-    height:4px;
+.mb-2{
 
-    margin:65px auto 0;
+    margin-bottom:20px;
 
-    border-radius:100px;
+}
 
-    background:linear-gradient(
+.mb-3{
 
-        to right,
-
-        transparent,
-
-        var(--primary),
-
-        transparent
-
-    );
+    margin-bottom:30px;
 
 }
 
 
+/* ==========================================================
+   SCROLL REVEAL
+========================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* ==========================================================
+   FADE ANIMATION
+========================================================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+
+/* ==========================================================
+   FLOAT
+========================================================== */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.float{
+
+    animation:floating 4s ease-in-out infinite;
+
+}
+
+
+/* ==========================================================
+   PULSE
+========================================================== */
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:0 0 0 0 rgba(59,130,246,.4);
+
+    }
+
+    70%{
+
+        box-shadow:0 0 0 20px rgba(59,130,246,0);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 0 0 rgba(59,130,246,0);
+
+    }
+
+}
+
+.pulse{
+
+    animation:pulse 2.5s infinite;
+
+}
+
+
+/* ==========================================================
+   SMOOTH HOVER
+========================================================== */
+
+button,
+a,
+.project-card,
+.stack-card,
+.activity-card,
+.contact-item,
+.info-item{
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease,
+
+        background .3s ease,
+
+        border-color .3s ease,
+
+        color .3s ease;
+
+}

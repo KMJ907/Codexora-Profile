@@ -2045,9 +2045,11 @@ img{
    CONTENT
 ========================================================== */
 
-.contact-item div{
+.contact-content{
 
     flex:1;
+
+    min-width:0;
 
 }
 
